@@ -29,3 +29,35 @@ The time and space complexity of the RSA algorithm implementation can be summari
 Please note that the complexity analysis provided is based on the code and analysis described in the README. The actual performance may vary depending on the input data and the specific implementation details.
 
 Feel free to modify and enhance the implementation according to your needs. If you have any questions or encounter any issues, please don't hesitate to reach out for assistance.
+
+# 直角斯坦纳森林有向树 (RSA) - 隐式列举
+
+该仓库包含了使用隐式列举算法实现的直角斯坦纳森林有向树算法。
+
+## 算法介绍
+直角斯坦纳森林有向树算法旨在找到具有直角边成本的图中的最优有向树，同时考虑特定的约束条件。它涉及生成测试集，减少候选点集，计算 δ 值，计算前缀集，对节点进行排序，将节点转换为 Node 结构，以及通过隐式列举找到最优解。
+
+## 文件和功能
+RSA_ImplicitEnumerate 文件夹包含以下文件：
+
+1. `GraphGenerator_vector.h` 和 `GraphGenerator_vector.cpp`：这些文件提供了生成测试集、减少候选点集和计算 δ 值的函数。
+
+2. `GraphConverter.cpp`：该文件包含了对节点进行排序和将节点转换为 Node 结构的函数。
+
+3. `main.cpp`：RSA 算法实现的主入口点。它包含了执行隐式列举和输出最优解的函数。
+
+## 使用方法
+要使用 RSA 算法实现，请按照以下步骤操作：
+1. 确保在您的系统上安装了 C++ 编译器。
+2. 克隆该仓库或下载 RSA_ImplicitEnumerate 文件夹。
+3. 在您的 C++ 项目中包含所需的文件 (`GraphGenerator_vector.h`、`GraphGenerator_vector.cpp`、`GraphConverter.cpp`、`main.cpp`)。
+4. 使用您喜欢的 C++ 编译器编译和运行程序。
+
+## 复杂度分析
+RSA 算法实现的时间和空间复杂度可以总结如下：
+- 时间复杂度：由于隐式列举过程，算法的整体时间复杂度是指数级的。每个函数的具体时间复杂度可以在代码注释和 README 中找到。
+- 空间复杂度：算法的整体空间复杂度取决于输入数据的大小和具体的实现细节。每个文件的空间复杂度分析请参考 README。
+
+请注意，所提供的复杂度分析是基于 README 中的代码和分析。实际性能可能会受到输入数据和具体实现细节的影响。
+
+您可以根据需要修改和增强该实现。如果您有任何问题或遇到任何问题，请随时寻求帮助。
