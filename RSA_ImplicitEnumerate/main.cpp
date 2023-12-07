@@ -113,6 +113,16 @@ bool checkConstraintTwo(const vector<Node*>& nodes) {
 
 // 检查属于 N - Ω的单点
 bool checkConstraintTwoSingle(Node* node) {
+    if (!node->successors.empty()) {
+        // 有出边，左侧必须为1
+        if (node->predecessor == nullptr) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool checkConstraintTwoSingle_old(Node* node) {
     if (node->successors.empty()) {
         // 无出边，左侧必须为0
         if (node->predecessor != nullptr) {
@@ -275,6 +285,11 @@ void clearPredecessor(int end, vector<Node>& nodes) {
 void backtrack(vector<Node>& nodes, int l, map<int, vector<int>>& idMap, double currentObj) {
     // cout << "Backtrack " << l << ":" << endl;
 
+    if (!nodes[l].isOmega && nodes[l].successors.empty()) {
+        backtrack(nodes, l - 1, idMap, currentObj);
+        return;
+    }
+
     if (l > 0) {
         vector<int> prefixes = idMap[l];
         // int cou = 0;  cout << "===========" << cou++ << "===========" << endl;
@@ -363,6 +378,11 @@ void saveNodesToCSV(vector<Node> nodes, const std::string& filename) {
 
     // Write data
     for (Node node : nodes) {
+        // Redundant Nodes
+        if (!node.isOmega && node.predecessor == nullptr && node.successors.empty()) {
+            continue;
+        }
+
         file << node.id << ",";
         file << (node.isOmega ? "true" : "false") << ",";
         for (double coord : node.coordinates) {
@@ -380,8 +400,8 @@ void saveNodesToCSV(vector<Node> nodes, const std::string& filename) {
 }
 
 int main() {
-    int n = 9;
-    int ub = 100;
+    int n = 11;
+    int ub = 50;
     int d = 2;
 
     // 随机生成测试点集Ω
@@ -441,7 +461,7 @@ int main() {
 
     cout << "bestObjective is " << bestObjective << endl;
 
-    saveNodesToCSV(optimalNodes, "RSA_231205.csv");
+    saveNodesToCSV(optimalNodes, "RSA_231207_2.csv");
 
     return 0;
 }
