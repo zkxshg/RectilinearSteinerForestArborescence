@@ -200,6 +200,9 @@ void copyRelationships(const vector<Node>& nodes, vector<Node>& newNodes) {
     // 创建一个从id到节点的映射
     for (Node& node : newNodes) {
         map[node.id] = &node;
+
+        node.predecessor = nullptr;
+        node.successors.clear();
     }
 
     // 遍历nodes，复制前后缀关系到newNodes
