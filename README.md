@@ -26,10 +26,6 @@ The time and space complexity of the RSA algorithm implementation can be summari
 - Time complexity: The overall time complexity of the algorithm is exponential due to the implicit enumeration process. The specific time complexity of each function can be found in the code comments and analysis provided in the README.
 - Space complexity: The overall space complexity of the algorithm depends on the size of the input data and the specific implementation details. Please refer to the README for each file's space complexity analysis.
 
-Please note that the complexity analysis provided is based on the code and analysis described in the README. The actual performance may vary depending on the input data and the specific implementation details.
-
-Feel free to modify and enhance the implementation according to your needs. If you have any questions or encounter any issues, please don't hesitate to reach out for assistance.
-
 # 直角斯坦纳森林有向树 (RSA) - 隐式列举
 
 该仓库包含了使用隐式列举算法实现的直角斯坦纳森林有向树算法。
@@ -57,10 +53,6 @@ RSA_ImplicitEnumerate 文件夹包含以下文件：
 RSA 算法实现的时间和空间复杂度可以总结如下：
 - 时间复杂度：由于隐式列举过程，算法的整体时间复杂度是指数级的。每个函数的具体时间复杂度可以在代码注释和 README 中找到。
 - 空间复杂度：算法的整体空间复杂度取决于输入数据的大小和具体的实现细节。每个文件的空间复杂度分析请参考 README。
-
-请注意，所提供的复杂度分析是基于 README 中的代码和分析。实际性能可能会受到输入数据和具体实现细节的影响。
-
-您可以根据需要修改和增强该实现。如果您有任何问题或遇到任何问题，请随时寻求帮助。
 
 时间复杂度：
 - generateTestSet(int n, int ub): O(n)
